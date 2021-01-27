@@ -49,6 +49,11 @@ spec:
           - alertmanager.adimen.local
     grafana:
       enabled: true
+      ingress:
+        enabled: true
+        ingressClassName: nginx
+        hosts:
+          - grafana.adimen.local
     kubeControllerManager:
       enabled: true
     kubeEtcd:
@@ -56,5 +61,6 @@ spec:
     prometheus:
       ingress:
         enabled: true
+        ingressClassName: nginx
         hosts:
           - prometheus.adimen.local
