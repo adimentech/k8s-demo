@@ -26,5 +26,8 @@ spec:
       ingressClass: nginx
       config:
         use-http2: "true"
-#      service:
-#        type: ClusterIP
+      service:
+        type: NodePort
+        nodePorts:
+          tcp:
+            80: 80
