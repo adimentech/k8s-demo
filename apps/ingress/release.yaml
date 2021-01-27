@@ -29,5 +29,5 @@ spec:
       service:
         type: NodePort
         nodePorts:
-          tcp:
-            80: 80
+          http: 32080
+          https: 32443
