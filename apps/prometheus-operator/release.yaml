@@ -58,4 +58,3 @@ spec:
         enabled: true
         hosts:
           - prometheus.adimen.local
-      prometheusSpec:
