@@ -11,5 +11,6 @@ spec:
     honorLabels: true
     interval: 10s
   selector:
-    {{- include "k8s-demo.selectorLabels" . | nindent 4 }}
+    matchLabels:
+    {{- include "k8s-demo.selectorLabels" . | nindent 6 }}
 {{- end }}
