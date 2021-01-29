@@ -1,0 +1,15 @@
+{{ if .Values.prometheus.serviceMonitor.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ include "k8s-demo.fullname" . }}
+  labels:
+    {{- include "k8s-demo.labels" . | nindent 4 }}
+spec:
+  endpoints:
+  - port: http
+    honorLabels: true
+    interval: 10s
+  selector:
+    {{- include "k8s-demo.selectorLabels" . | nindent 4 }}
+{{- end }}

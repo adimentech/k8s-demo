@@ -31,18 +31,19 @@ spec:
           group_wait: 30s
           group_interval: 5m
           repeat_interval: 12h
-          receiver: 'alerts'
+          receiver: 'null'
           routes:
             - match:
                 alertname: Watchdog
               receiver: 'null'
         receivers:
           - name: 'null'
-          - name: 'alerts'
-            slack_configs:
-              - api_url: 'https://hooks.slack.com/services/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'
-                channel: '#k8s-demo'
-                send_resolved: true
+#          - name: 'alerts'
+#            slack_configs:
+#              # Create a secret with this webhook
+#              - api_url: 'https://hooks.slack.com/services/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'
+#                channel: '#k8s-demo'
+#                send_resolved: true
       ingress:
         enabled: true
         hosts:
